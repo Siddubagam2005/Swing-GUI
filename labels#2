@@ -1,0 +1,44 @@
+
+import java.awt.Color;
+import java.awt.Font;
+import javax.swing.BorderFactory;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.border.Border;
+
+
+public class Lablels {
+    public static void main(String[] args) {
+        JLabel label = new JLabel();
+       Border border = BorderFactory.createLineBorder(Color.green, 3);
+
+       label.setBorder(border);
+        //Jlabel is a GUI display area for a String of text,an image,or both
+        label.setText("Hello , How Are You??");
+
+       // ImageIcon image = new ImageIcon("8760.jpg");
+       // label.setIcon(image);
+        label.setHorizontalTextPosition(JLabel.CENTER);//left,right , center
+        label.setVerticalTextPosition(JLabel.TOP);
+        label.setForeground(Color.green);//font color
+        label.setFont(new Font("My Boli",Font.PLAIN,50));
+        label.setIconTextGap(25);//set gap of a text to image
+        label.setBackground(Color.BLACK);//no chnage
+        label.setOpaque(true);//after this bg color change
+        //label.setBounds(100,100,250,250);
+
+
+
+
+
+        JFrame frame =new JFrame();//creates a frame
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//frame.setSize(420,420);//sets the x-dimentions, and y-dimentions of frame
+        
+        //frame.setLayout(null);
+		frame.setVisible(true);
+        frame.add(label);
+        frame.pack();//set size of frame 
+
+    }
+}
