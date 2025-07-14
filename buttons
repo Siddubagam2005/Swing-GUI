@@ -1,0 +1,38 @@
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+public class MyFrame extends JFrame implements ActionListener{
+    JButton button;
+    MyFrame(){
+        button = new JButton();
+        button.setBounds(200,100,100,50);
+        button.addActionListener(this);
+        button.setText("Click");
+        button.setFocusable(false);
+
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setLayout(null);
+        this.setSize(500,500);
+        this.setVisible(true);
+        this.add(button);
+    }
+    public void actionPerformed(ActionEvent e){
+        if(e.getSource()==button){
+            System.out.println("wow!!! you are too close to complete the course");
+        }
+    }
+    
+}
+
+
+
+//call from another class(main)
+
+public class Buttons {
+    public static void main(String[] args) {
+        MyFrame frame=new MyFrame();
+    }
+}
